@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get( '/', function () {
     return view( 'home' );
-} );
+} )->name( 'home' );
+
 Route::get( '/blog', function () {
     // Searching on the DB
     $posts = [
@@ -23,9 +24,10 @@ Route::get( '/blog', function () {
         [ 'id' => 2, 'title' => 'Laravel', 'slug' => 'laravel' ]
     ];
     return view( 'blog', [ 'posts' => $posts ] ); //Sending the DB data
-} );
+} )->name( 'blog' );
+
 Route::get( '/blog/{slug}', function ( $slug ) {
     // Searching on the DB
     $post = $slug;
     return view( 'post', [ 'post' => $post ] ); //Sending the DB data
-} );
+} )->name( 'post' );
