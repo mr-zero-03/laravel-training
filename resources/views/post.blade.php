@@ -4,4 +4,6 @@
   <h1>{{ $post->title }}</h1>
 
   <p>{{ $post->body }}</p>
+
+  <strong>Autor: {{ $post->user->name }}</strong>
 @endsection

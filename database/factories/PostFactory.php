@@ -19,6 +19,7 @@ class PostFactory extends Factory
     {
         $title = $this->faker->sentence();
         return [
+            'user_id' => 1,
             'title' => $title,
             'slug' => Str::slug( $title ),
             'body' => $this->faker->text( 2200 )
